@@ -18,11 +18,8 @@ for ( var y = 0; y < 4; y++) {
         item.setAttribute("data-color", color)
 
         list.appendChild(item)
-        
-
     }
 }
-
 let items = Array.from(list.children)
 items.forEach(item =>{
     item.onclick = function(e){
@@ -34,19 +31,19 @@ items.forEach(item =>{
             target.classList.add("selected")
         }
         else{
-            if(selected.dataset.color == color){
+            let selectedColor = selected.dataset.color;
+            if(selectedColor == color && target.classList.contains("selected") != true  ){
                 target.style.backgroundColor = color
                 setTimeout(function(){
                     alert("Felicidades lo has logrado!")
                 location.reload()
-                }, 1000)
+                }, 1500)
             }
             else{
                 items.forEach(i => i.classList.remove("selected"))
                 items.forEach(i => i.style.backgroundColor = "rgba(30, 30, 30,1)")
             }
         }
-        console.log (target, color, selected)
     }
 })
 
