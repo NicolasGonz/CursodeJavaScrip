@@ -19,7 +19,7 @@ for ( var y = 0; y < 4; y++) {
 
         list.appendChild(item)
         
-        item.style.backgroundColor = color
+
     }
 }
 
@@ -30,11 +30,26 @@ items.forEach(item =>{
         let color = target.dataset.color;
         let selected = items.find(item => item.classList.contains("selected") == true)
         if(!selected){
+            target.style.backgroundColor = color
             target.classList.add("selected")
+        }
+        else{
+            if(selected.dataset.color == color){
+                target.style.backgroundColor = color
+                setTimeout(function(){
+                    alert("Felicidades lo has logrado!")
+                location.reload()
+                }, 1000)
+            }
+            else{
+                items.forEach(i => i.classList.remove("selected"))
+                items.forEach(i => i.style.backgroundColor = "rgba(30, 30, 30,1)")
+            }
         }
         console.log (target, color, selected)
     }
 })
+
 //ul => unordered list
 //ol => ordered list
 //li => list item
