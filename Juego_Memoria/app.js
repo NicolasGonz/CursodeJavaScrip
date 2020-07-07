@@ -3,7 +3,7 @@
 let list = document.createElement("ul");
 document.body.appendChild(list)
 
-let colores = ["#f94144", "#f8961e", "#90be6d", "#577590"]
+let colores = ["#f94144", "#f8961e", "#90be6d", "#48bfe3"]
 
 
 for ( var y = 0; y < 4; y++) {
@@ -41,7 +41,7 @@ items.forEach(item =>{
             }
             else{
                 items.forEach(i => i.classList.remove("selected"))
-                items.forEach(i => i.style.backgroundColor = "rgba(30, 30, 30,1)")
+                items.forEach(i => i.style.backgroundColor = "rgba(250, 250, 250,1)")
             }
         }
     }
